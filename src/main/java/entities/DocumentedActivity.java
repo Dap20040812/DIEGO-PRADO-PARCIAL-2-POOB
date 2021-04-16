@@ -7,6 +7,7 @@ import java.util.List;
 public class DocumentedActivity extends Activity {
 
     private NormalActivity activity;
+    private ISynthesizer synthesizer;
     private List<Question> questions;
 
     public DocumentedActivity(String name, String state, Iteration iteration, NormalActivity activity) {
