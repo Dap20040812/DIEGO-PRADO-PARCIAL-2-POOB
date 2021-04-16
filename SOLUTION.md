@@ -6,7 +6,11 @@
 
  # DISEÑANDO
 
+ Public List<List<String>> sumarize(String TipeOfSummary)
+
  ![](img/SEC.svg)
+
+ ![](img/UML.svg)
 
  # CONCEPTOS
 
