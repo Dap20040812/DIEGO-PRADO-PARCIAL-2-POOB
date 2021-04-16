@@ -5,6 +5,9 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ *  La clase Proyect representa a un proyecto de la universidad
+ */
 public class Project {
 
     private String name;
@@ -27,8 +30,24 @@ public class Project {
         this.iterations.add(iteration);
     }
 
+    /**
+     * Obtiene la duración del proyecto
+     * @return la duracion en dias del proyecto
+     * @throws SabanaResearchException
+     */
     public Duration getDuration() throws SabanaResearchException {
-        return Duration.ofDays(0);
+
+        Duration d = Duration.ofDays(0);
+        if(iterations.size() == 0)
+        {
+            throw new SabanaResearchException(SabanaResearchException.BAD_FORMED_PROJECT);
+        }
+        for(Iteration e:this.iterations)
+        {
+            Duration a = e.getDuration();
+            d = d.plusDays(a.toDays());
+        }
+        return d;
     }
 
 

@@ -18,9 +18,29 @@ public class DocumentedActivity extends Activity {
     public void addQuestion(Question question) {
         this.questions.add(question);
     }
-
+    /**
+     * Obtiene la duración de la Actividad documentada
+     * @return la duracion en dias del Actividad documentada
+     * @throws SabanaResearchException
+     */
     @Override
-    public Duration getDuration() {
-        return null;
+    public Duration getDuration() throws SabanaResearchException{
+
+        Duration d = Duration.ofDays(0);
+        if(questions.size() == 0)
+        {
+            throw new SabanaResearchException(SabanaResearchException.BAD_FORMED_DOCUMENTED_ACTIVITY);
+        }
+        if(activity == null)
+        {
+            throw new SabanaResearchException(SabanaResearchException.BAD_FORMED_DOCUMENTED_ACTIVITY_WITHOUT_NORMAL_QUESTION);
+        }
+        for(Question q: this.questions)
+        {
+            d=d.plusDays(q.getDedication().toDays());
+        }
+        d=d.plusDays(activity.getDuration().toDays());
+
+        return d;
     }
 }

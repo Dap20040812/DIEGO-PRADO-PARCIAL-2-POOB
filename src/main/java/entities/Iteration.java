@@ -1,8 +1,11 @@
 package entities;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ *  La clase Proyect representa a una interaccion del poryecto
+ */
 public class Iteration {
 
     private String goal;
@@ -20,5 +23,23 @@ public class Iteration {
     public void addActivity(Activity activity) {
         this.activities.add(activity);
     }
+    /**
+     * Obtiene la duración de la interacción
+     * @return la duracion en dias del interacción
+     * @throws SabanaResearchException
+     */
+    public Duration getDuration() throws SabanaResearchException{
 
+        Duration d = Duration.ofDays(0);
+        if(activities.size() == 0)
+        {
+            throw new SabanaResearchException(SabanaResearchException.BAD_FORMED_ITERATION);
+        }
+        for (Activity a: this.activities)
+        {
+            Duration v = a.getDuration();
+            d=d.plusDays(v.toDays());
+        }
+        return d;
+    }
 }
