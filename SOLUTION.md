@@ -6,7 +6,16 @@
 
  # DISEÑANDO
 
+
+/**
+Gerera un tipo de resumen dependiendo del tipo de resmuen
+
+return El resumen dependientod del TipeOfSummary
+param TipeOfSummary
+*/
+
  Public List<List<String>> sumarize(String TipeOfSummary)
+
 
  ![](img/SEC.svg)
 
