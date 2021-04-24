@@ -38,7 +38,7 @@ public class Iteration {
         for (Activity a: this.activities)
         {
             Duration v = a.getDuration();
-            d=d.plusDays(v.toDays());
+            d=d.plus(v);
         }
         return d;
     }

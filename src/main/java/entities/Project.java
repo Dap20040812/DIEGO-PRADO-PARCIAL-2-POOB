@@ -46,7 +46,7 @@ public class Project {
         for(Iteration e:this.iterations)
         {
             Duration a = e.getDuration();
-            d = d.plusDays(a.toDays());
+            d = d.plus(a);
         }
         return d;
     }

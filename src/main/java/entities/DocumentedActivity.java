@@ -38,9 +38,9 @@ public class DocumentedActivity extends Activity {
         }
         for(Question q: this.questions)
         {
-            d=d.plusDays(q.getDedication().toDays());
+            d=d.plus(q.getDedication());
         }
-        d=d.plusDays(activity.getDuration().toDays());
+        d=d.plus(activity.getDuration());
 
         return d;
     }

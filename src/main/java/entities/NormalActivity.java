@@ -31,7 +31,7 @@ public class NormalActivity extends Activity {
         }
         for(Step s: this.steps)
         {
-           d=d.plusDays(s.getDuration().toDays());
+           d=d.plus(s.getDuration());
         }
 
 
