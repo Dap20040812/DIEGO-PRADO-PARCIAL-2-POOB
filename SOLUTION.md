@@ -21,6 +21,18 @@ param TipeOfSummary
 
  ![](img/UML.svg)
 
+ # EXTENDIENDO
+
+ ![](img/UML-2.svg)
+
+ De los diseños resultantes del punto I y II, ¿Qué debe cambiar? ¿Qué no debe cambiar?
+
+ Debe cabiar las relaciones existenente s entre una actividad y una interacion, sim embargo no se debe modificar la estrcutura de estas clase, ya que se debe usar otra clase que me permita identificar la dependencia nesesario de la actividad
+
+ Teniendo en cuenta los cambios necesarios ¿Que fue bueno y que fue malo de su diseño?
+
+ Lo bueno de los diseños anteriores fue que ya estaban estructurados de una forma que para generar dependencia de otras clases o de la misma, no era necesario realizar muchos cambios, por lo cual solo requirió crear un a clase abstracta que nos permitiera esta, sim embargo lo malo fue que esto provoco demasiadas denuncias a la clase dependency entonces si algo le ocurre a la clase las actividades no funcionarían.
+
  # CONCEPTOS
 
  1. ¿Cuáles son las acciones los tres momentos importantes de las excepciones? ¿Cuál es el objetivo de cada una? ¿Cómo se implementa en Java cada acción?.
